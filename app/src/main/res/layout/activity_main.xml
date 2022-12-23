@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="com.example.hesapmakinesi.IClickListener" />
+
+        <variable
+            name="adapter"
+            type="com.example.hesapmakinesi.RecyclerViewAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".View.MainActivity">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="35dp"
+            android:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+        <ImageButton
+            android:id="@+id/_delete"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_outline_delete_forever_24"
+            android:onClick="@{(view)->clickListener.click(view)}"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:background="#272727"
+
+            android:gravity="center"
+            android:textColor="@color/teal_700"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/_solParantez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view)->clickListener.click(view)}"
+                android:paddingVertical="15dp"
+                android:text="("
+
+                android:textSize="28sp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/_sagParantez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view)->clickListener.click(view)}"
+                android:paddingVertical="15dp"
+                android:text=")"
+
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_dokuz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="9"
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_altı"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="6"
+
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_uc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="3"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_virgul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text=","
+
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_sekiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="8"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_bes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="5"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_iki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="15dp"
+                    android:text="2"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_sıfır"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="0"
+
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_yedi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="7"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_dort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="4"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_bir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="1"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_eşittir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="="
+
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_artı"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="+"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_eksi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="-"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_carpı"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="*"
+
+                    android:textSize="28sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/_bolu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->clickListener.click(view)}"
+                    android:paddingVertical="15dp"
+                    android:text="/"
+
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
