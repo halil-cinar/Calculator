@@ -89,7 +89,10 @@ class MainActivity : AppCompatActivity(), IClickListener {
                         buttonList[view.id].toString()
             } else if (view.id == R.id._delete) {
                 dataBinding?.textView?.text = "";
-            } else if (view.id == R.id._eşittir) {
+            }else if(view.id==R.id._backspace){
+                var işlem = dataBinding!!.textView.text.toString()
+                dataBinding?.textView?.text=işlem.substring(0,işlem.length-1)
+            }else if (view.id == R.id._eşittir) {
                 var text = dataBinding!!.textView.text.toString()
                 if (denge(text)) {
                     println(text)
