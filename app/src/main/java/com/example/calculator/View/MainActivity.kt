@@ -16,7 +16,7 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 var TAG="app"
 class MainActivity : AppCompatActivity(), IClickListener {
-    var dataBinding: ActivityMainBinding?=null
+  lateinit  var dataBinding: ActivityMainBinding
     var buttonList=HashMap<Int,String>()
     var islemler= arrayListOf<String>()
     var işlemButtonList= HashMap<Int,String>()
@@ -25,12 +25,8 @@ class MainActivity : AppCompatActivity(), IClickListener {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         dataBinding=DataBindingUtil.setContentView(this, R.layout.activity_main)
+        Log.e(TAG, "onCreate: "+dataBinding, )
          adapter= RecyclerViewAdapter(arrayListOf(),dataBinding!!.recyclerView)
-        var list= arrayListOf<String>()
-        list.add("abc")
-        list.add("abc")
-        list.add("abc")
-        list.add("abc")
 
         adapter.setItems(islemler)
         dataBinding!!.adapter=adapter!!;

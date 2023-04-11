@@ -20,7 +20,7 @@
         android:gravity="center_vertical"
         android:textAlignment="inherit"
         android:text="@{text}"
-        android:textColor="@color/white"
+        android:textColor="@android:drawable/edit_text"
         android:textSize="25sp"
         android:paddingStart="15dp"
 
