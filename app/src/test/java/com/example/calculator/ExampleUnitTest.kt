@@ -1,4 +1,4 @@
-package com.example.hesapmakinesi
+package com.example.calculator
 
 import org.junit.Test
 

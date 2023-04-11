@@ -1,12 +1,12 @@
-package com.example.hesapmakinesi
+package com.example.calculator
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hesapmakinesi.View.TAG
-import com.example.hesapmakinesi.databinding.RecyclerViewLayoutBinding
+import com.example.calculator.View.TAG
+import com.example.calculator.databinding.RecyclerViewLayoutBinding
 
 class RecyclerViewAdapter(private var items:ArrayList<String>,private val recyclerView: RecyclerView):RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     var instance:RecyclerViewLayoutBinding?=null

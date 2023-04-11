@@ -1,4 +1,4 @@
-package com.example.hesapmakinesi.View
+package com.example.calculator.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,16 +6,17 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.hesapmakinesi.IClickListener
-import com.example.hesapmakinesi.RecyclerViewAdapter
-import com.example.hesapmakinesi.R
-import com.example.hesapmakinesi.databinding.ActivityMainBinding
+import com.example.calculator.IClickListener
+import com.example.calculator.R
+import com.example.calculator.RecyclerViewAdapter
+import com.example.calculator.databinding.ActivityMainBinding
+
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 var TAG="app"
 class MainActivity : AppCompatActivity(), IClickListener {
-    var dataBinding:ActivityMainBinding?=null
+    var dataBinding: ActivityMainBinding?=null
     var buttonList=HashMap<Int,String>()
     var islemler= arrayListOf<String>()
     var işlemButtonList= HashMap<Int,String>()
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity(), IClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-        dataBinding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        dataBinding=DataBindingUtil.setContentView(this, R.layout.activity_main)
          adapter= RecyclerViewAdapter(arrayListOf(),dataBinding!!.recyclerView)
         var list= arrayListOf<String>()
         list.add("abc")

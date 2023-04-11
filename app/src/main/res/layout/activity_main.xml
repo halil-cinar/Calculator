@@ -7,11 +7,11 @@
     <data>
         <variable
             name="clickListener"
-            type="com.example.hesapmakinesi.IClickListener" />
+            type="com.example.calculator.IClickListener" />
 
         <variable
             name="adapter"
-            type="com.example.hesapmakinesi.RecyclerViewAdapter" />
+            type="com.example.calculator.RecyclerViewAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
